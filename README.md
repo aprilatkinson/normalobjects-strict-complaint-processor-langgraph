@@ -1,5 +1,6 @@
-## NormalObjects – Strict Complaint Processor (LangGraph)
-Overview
+# NormalObjects – Strict Complaint Processor (LangGraph)
+
+## Overview
 - This project implements Bloyce’s Protocol, a structured, rule-based complaint processing system for the Downside Up Complaint Bureau.
 Unlike the creative LangChain agent from Lab 1, this system uses LangGraph to enforce a deterministic workflow:
 
@@ -96,7 +97,8 @@ Status: escalated
 Valid: False
 
 ## Bloyce’s Protocol Rule Enforcement
-# Intake Rules
+
+###  Intake Rules
 Categorize complaint into exactly one of:
 portal
 monster
@@ -142,7 +144,8 @@ LangGraph (Lab 2 – Structured Workflow)
 - Full audit trail
 - Deterministic and compliance-friendly
 
-# When to Use Each
+###  When to Use Each
+
 Use LangChain when:
 Creative reasoning is required
 Flexible problem-solving is needed
@@ -163,5 +166,6 @@ Provides traceable workflow path visualization
 
 Author
 April Atkinson
+
 
 
