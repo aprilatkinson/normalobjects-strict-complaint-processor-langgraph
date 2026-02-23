@@ -107,21 +107,21 @@ other
 Extract essential details
 Flag insufficient detail
 
-# Validation Rules
+###  Validation Rules
 Category-specific validation logic
 “Other” category auto-escalates
 Complaints missing essential details are rejected
 
-# Investigation Rules
+###  Investigation Rules
 Investigation must produce documented evidence
 No investigation without successful validation
 
-# Resolution Rules
+###  Resolution Rules
 Resolution must reference Downside Up procedures
 Effectiveness rating assigned (high / medium / low)
 Certain categories may require escalation
 
-# Closure Rules
+###  Closure Rules
 Confirmation of resolution application
 Customer satisfaction verification attempt
 Timestamp logging
@@ -163,4 +163,5 @@ Provides traceable workflow path visualization
 
 Author
 April Atkinson
+
 
