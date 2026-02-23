@@ -64,13 +64,25 @@ def validate_node(state: ComplaintState) -> ComplaintState:
 
     valid_by_category, errors = rules.validate_by_category(category, complaint)
 
-    # Essentials gate (placeholder threshold)
+    # If "other", we stop here and escalate (per protocol)
+    if category == "other":
+        new_state: ComplaintState = {
+        **state,
+        "is_valid": False,
+        "validation_errors": errors,
+        "workflow_path": state.get("workflow_path", []) + ["validate"],
+        "status": "escalated",
+        }
+        _log(new_state, f"[VALIDATE] escalated=True. Errors={errors}")
+        return new_state
+
+    # Essentials gate (lab-friendly: require at least "what")
     essentials_ok = rules.has_minimum_essentials(essentials)
     if not essentials_ok:
         errors.append("Missing essential details; request clarification (who/what/when/where).")
 
     is_valid = valid_by_category and essentials_ok
-    status = "validate" if is_valid else ("escalated" if category == "other" else "rejected")
+    status = "validate" if is_valid else "rejected"
 
     new_state: ComplaintState = {
         **state,
